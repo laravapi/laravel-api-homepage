@@ -17,6 +17,7 @@ class ServiceSeeder extends Seeder
         Service::create([
             'name' => 'twitter',
             'package' => 'abraham/twitteroauth',
+            'definition' => 'Laravapi\Twitter\TwitterWrapper',
         ]);
     }
 }
