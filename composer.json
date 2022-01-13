@@ -6,24 +6,24 @@
     "license": "MIT",
     "repositories": [
         {
-            "type": "path",
-            "url": "../laravel-api-clients/twitter"
+            "type": "vcs",
+            "url": "https://github.com/laravapi/twitter"
         },
         {
-            "type": "path",
-            "url": "../laravel-api-clients/dummy"
+            "type": "vcs",
+            "url": "https://github.com/laravapi/dummy"
         },
         {
-            "type": "path",
-            "url": "../laravel-api-clients/youtube"
+            "type": "vcs",
+            "url": "https://github.com/laravapi/youtube"
         },
         {
-            "type": "path",
-            "url": "../laravel-api-clients/github"
+            "type": "vcs",
+            "url": "https://github.com/laravapi/github"
         },
         {
-            "type": "path",
-            "url": "../laravel-api"
+            "type": "vcs",
+            "url": "https://github.com/laravapi/laravel-api"
         }
     ],
     "require": {
