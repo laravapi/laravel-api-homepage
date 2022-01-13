@@ -14,6 +14,7 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->string('package');
             $table->string('definition');
+            $table->text('description');
             $table->json('documentation')->nullable();
             $table->timestamps();
         });

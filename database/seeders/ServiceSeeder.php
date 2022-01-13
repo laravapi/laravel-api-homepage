@@ -13,24 +13,28 @@ class ServiceSeeder extends Seeder
             'name' => 'Dummy',
             'package' => 'laravel-api/dummy',
             'definition' => 'LaravelApi\Dummy\DummyWrapper',
+            'description' => 'This is the description for the Dummy service',
         ],
         [
             'key' => 'twitter',
             'name' => 'Twitter',
             'package' => 'laravel-api/twitter',
             'definition' => 'LaravelApi\Twitter\TwitterWrapper',
+            'description' => 'This is the description for the Twitter service',
         ],
         [
             'key' => 'github',
             'name' => 'GitHub',
             'package' => 'laravel-api/github',
             'definition' => 'LaravelApi\Github\GithubWrapper',
+            'description' => 'This is the description for the GitHub service',
         ],
         [
             'key' => 'youtube',
             'name' => 'YouTube',
             'package' => 'laravel-api/youtube',
             'definition' => 'LaravelApi\YouTube\YouTubeWrapper',
+            'description' => 'This is the description for the YouTube service',
         ],
     ];
 

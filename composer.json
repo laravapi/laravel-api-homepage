@@ -35,7 +35,7 @@
         "laravel/jetstream": "^2.5",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "livewire/livewire": "^2.5",
+        "livewire/livewire": "^2.9",
         "phpdocumentor/reflection-docblock": "^5.3"
     },
     "require-dev": {
