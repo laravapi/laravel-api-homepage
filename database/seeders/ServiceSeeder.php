@@ -24,7 +24,7 @@ class ServiceSeeder extends Seeder
             'definition' => 'LaravelApi\Github\GithubWrapper',
         ],
         [
-            'name' => 'twitter',
+            'name' => 'youtube',
             'package' => 'laravel-api/youtube',
             'definition' => 'LaravelApi\YouTube\YouTubeWrapper',
         ],
