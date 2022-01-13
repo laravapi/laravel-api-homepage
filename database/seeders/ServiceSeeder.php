@@ -7,17 +7,31 @@ use Illuminate\Database\Seeder;
 
 class ServiceSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+    protected $services = [
+        [
+            'name' => 'dummy',
+            'package' => 'laravel-api/dummy',
+            'definition' => 'LaravelApi\Dummy\DummyWrapper',
+        ],
+        [
+            'name' => 'twitter',
+            'package' => 'laravel-api/twitter',
+            'definition' => 'LaravelApi\Twitter\TwitterWrapper',
+        ],
+        [
+            'name' => 'github',
+            'package' => 'laravel-api/github',
+            'definition' => 'LaravelApi\Github\GithubWrapper',
+        ],
+        [
+            'name' => 'twitter',
+            'package' => 'laravel-api/youtube',
+            'definition' => 'LaravelApi\YouTube\YouTubeWrapper',
+        ],
+    ];
+
     public function run()
     {
-        Service::create([
-            'name' => 'twitter',
-            'package' => 'abraham/twitteroauth',
-            'definition' => 'Laravapi\Twitter\TwitterWrapper',
-        ]);
+        Service::insert($this->services);
     }
 }
