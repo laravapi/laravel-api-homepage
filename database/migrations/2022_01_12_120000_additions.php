@@ -10,9 +10,11 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
+            $table->string('key')->unique();
             $table->string('name')->unique();
             $table->string('package');
             $table->string('definition');
+            $table->json('documentation')->nullable();
             $table->timestamps();
         });
     }

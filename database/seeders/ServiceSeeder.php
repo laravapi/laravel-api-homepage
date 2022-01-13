@@ -9,22 +9,26 @@ class ServiceSeeder extends Seeder
 {
     protected $services = [
         [
-            'name' => 'dummy',
+            'key' => 'dummy',
+            'name' => 'Dummy',
             'package' => 'laravel-api/dummy',
             'definition' => 'LaravelApi\Dummy\DummyWrapper',
         ],
         [
-            'name' => 'twitter',
+            'key' => 'twitter',
+            'name' => 'Twitter',
             'package' => 'laravel-api/twitter',
             'definition' => 'LaravelApi\Twitter\TwitterWrapper',
         ],
         [
-            'name' => 'github',
+            'key' => 'github',
+            'name' => 'GitHub',
             'package' => 'laravel-api/github',
             'definition' => 'LaravelApi\Github\GithubWrapper',
         ],
         [
-            'name' => 'youtube',
+            'key' => 'youtube',
+            'name' => 'YouTube',
             'package' => 'laravel-api/youtube',
             'definition' => 'LaravelApi\YouTube\YouTubeWrapper',
         ],

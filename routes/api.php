@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('services', [ServiceController::class, 'index']);
-Route::get('services/{service:name}', [ServiceController::class, 'show']);
+Route::get('services/{service:key}', [ServiceController::class, 'show']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
