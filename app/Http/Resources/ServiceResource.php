@@ -17,7 +17,7 @@ class ServiceResource extends JsonResource
         return [
             'key' => $this->key,
             'name' => $this->name,
-            'package' => $this->package,
+            'package' => $this->wrapper_package,
             'definition' => $this->definition,
         ];
     }

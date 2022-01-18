@@ -12,7 +12,9 @@ return new class extends Migration
             $table->id();
             $table->string('key')->unique();
             $table->string('name')->unique();
-            $table->string('package');
+            $table->string('wrapper_package');
+            $table->string('api_package');
+            $table->string('github')->nullable();
             $table->string('version');
             $table->string('wrapper_class');
             $table->text('description');

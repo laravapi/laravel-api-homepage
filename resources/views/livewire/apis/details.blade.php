@@ -3,8 +3,20 @@
         <!-- Profile header -->
         <div>
             <div class="bg-pink-500 h-16 text-white text-center pt-4 text-2xl font-bold">
-                {{ $api->name }}
+                <span>
+                    {{ $api->name }}
+                </span>
             </div>
+
+            <div class="fixed right-4 top-4 whitespace-nowrap">
+                <a href="https://packagist.org/packages/{{ $api->api_package }}" target="_blank" class="inline-block rounded-full bg-white h-8 w-8 p-1">
+                    <img src="{{ asset('images/packagist.png') }}" class="w-6 h-6"/>
+                </a>
+                <a href="{{ $api->github }}" target="_blank" class="inline-block">
+                    <img src="{{ asset('images/github.png') }}" class="w-8 h-8"/>
+                </a>
+            </div>
+
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="-mt-12 sm:flex sm:items-end sm:space-x-5">
                     <div class="flex">

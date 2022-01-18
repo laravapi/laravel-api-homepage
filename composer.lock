@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dc29d3cb02132a92dd8f6d0cf5353409",
+    "content-hash": "d972275ea93f2142b9412a137fd015b0",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1278,6 +1278,93 @@
                 }
             ],
             "time": "2020-06-13T08:05:20+00:00"
+        },
+        {
+            "name": "laravel-api/laravel-api",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravapi/laravel-api.git",
+                "reference": "35d074ea2cc6980a000023e56146d2f82505ea90"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravapi/laravel-api/zipball/35d074ea2cc6980a000023e56146d2f82505ea90",
+                "reference": "35d074ea2cc6980a000023e56146d2f82505ea90",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^8.73",
+                "php": "^8.0",
+                "spatie/laravel-package-tools": "^1.9.2"
+            },
+            "require-dev": {
+                "nunomaduro/collision": "^5.10",
+                "orchestra/testbench": "^6.22",
+                "pestphp/pest": "^1.21",
+                "pestphp/pest-plugin-laravel": "^1.1",
+                "phpunit/phpunit": "^9.5",
+                "spatie/laravel-ray": "^1.26"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LaravelApi\\LaravelApi\\LaravelApiServiceProvider"
+                    ],
+                    "aliases": {
+                        "LaravelApi": "LaravelApi\\LaravelApi\\Facades\\LaravelApi"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaravelApi\\LaravelApi\\": "src",
+                    "LaravelApi\\LaravelApi\\Database\\Factories\\": "database/factories"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "LaravelApi\\LaravelApi\\Tests\\": "tests"
+                }
+            },
+            "scripts": {
+                "analyse": [
+                    "vendor/bin/phpstan analyse"
+                ],
+                "test": [
+                    "vendor/bin/pest"
+                ],
+                "test-coverage": [
+                    "vendor/bin/pest coverage"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris & Seb",
+                    "email": "sebastian.schoeps@nanuc.io",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This is my package laravel-api",
+            "homepage": "https://github.com/laravel-api/laravel-api",
+            "keywords": [
+                "laravel",
+                "laravel-api",
+                "laravel-api"
+            ],
+            "support": {
+                "source": "https://github.com/laravapi/laravel-api/tree/main",
+                "issues": "https://github.com/laravapi/laravel-api/issues"
+            },
+            "time": "2022-01-17T10:35:20+00:00"
         },
         {
             "name": "laravel/fortify",
@@ -3888,6 +3975,65 @@
                 }
             ],
             "time": "2021-11-09T10:57:15+00:00"
+        },
+        {
+            "name": "spatie/laravel-package-tools",
+            "version": "1.11.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-package-tools.git",
+                "reference": "fd75af77d0bbf221f33369186df16da704bebebd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/fd75af77d0bbf221f33369186df16da704bebebd",
+                "reference": "fd75af77d0bbf221f33369186df16da704bebebd",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^7.0|^8.0|^9.0",
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.4",
+                "orchestra/testbench": "^5.0|^6.23|^7.0",
+                "phpunit/phpunit": "^9.4",
+                "spatie/test-time": "^1.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\LaravelPackageTools\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Tools for creating Laravel packages",
+            "homepage": "https://github.com/spatie/laravel-package-tools",
+            "keywords": [
+                "laravel-package-tools",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-package-tools/issues",
+                "source": "https://github.com/spatie/laravel-package-tools/tree/1.11.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-01-11T16:14:23+00:00"
         },
         {
             "name": "spatie/laravel-ray",
@@ -9307,7 +9453,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "laravel-api/laravel-api": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

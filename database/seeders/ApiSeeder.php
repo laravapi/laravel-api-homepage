@@ -11,7 +11,8 @@ class ApiSeeder extends Seeder
         [
             'key' => 'dummy',
             'name' => 'Dummy',
-            'package' => 'laravel-api/dummy',
+            'wrapper_package' => 'laravel-api/dummy',
+            'api_package' => 'laravel-api/dummy',
             'version' => 'dev-master',
             'wrapper_class' => 'LaravelApi\Dummy\DummyWrapper',
             'description' => 'This is the description for the Dummy Api',
@@ -20,7 +21,8 @@ class ApiSeeder extends Seeder
         [
             'key' => 'twitter',
             'name' => 'Twitter',
-            'package' => 'laravel-api/twitter',
+            'wrapper_package' => 'laravel-api/twitter',
+            'api_package' => 'abraham/twitteroauth',
             'version' => 'dev-master',
             'wrapper_class' => 'LaravelApi\Twitter\TwitterWrapper',
             'description' => 'This is the description for the Twitter Api',
@@ -29,7 +31,8 @@ class ApiSeeder extends Seeder
         [
             'key' => 'github',
             'name' => 'GitHub',
-            'package' => 'laravel-api/github',
+            'wrapper_package' => 'laravel-api/github',
+            'api_package' => 'graham-campbell/github',
             'version' => 'dev-master',
             'wrapper_class' => 'LaravelApi\GitHub\GitHubWrapper',
             'description' => 'This is the description for the GitHub Api',
@@ -38,7 +41,8 @@ class ApiSeeder extends Seeder
         [
             'key' => 'youtube',
             'name' => 'YouTube',
-            'package' => 'laravel-api/youtube',
+            'wrapper_package' => 'laravel-api/youtube',
+            'api_package' => 'alaouy/youtube',
             'version' => 'dev-master',
             'wrapper_class' => 'LaravelApi\YouTube\YouTubeWrapper',
             'description' => 'This is the description for the YouTube Api',

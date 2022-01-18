@@ -3,6 +3,8 @@
 namespace App\Actions;
 
 use App\Models\Api;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Http;
 use phpDocumentor\Reflection\DocBlockFactory;
 use ReflectionMethod;
 use ReflectionParameter;
@@ -13,7 +15,9 @@ class ParseWrapper
 
     public function execute(Api $api)
     {
-        shell_exec('composer require ' . $api->package);
+        $api->update(['github' => $this->getGitHubLink($api)]);
+
+        shell_exec('composer require ' . $api->wrapper_package);
 
         $factory  = DocBlockFactory::createInstance();
 
@@ -39,9 +43,9 @@ class ParseWrapper
                 ];
             })->values();
 
-        $fakeWrapperClass = $wrapperClass->faker;
+        if(property_exists($wrapperClass, 'faker')) {
+            $fakeWrapperClass = $wrapperClass->faker;
 
-        if($fakeWrapperClass) {
             $fakeWrapper = $this->loadWrapperFakerClass($fakeWrapperClass);
 
             foreach ($methods as $index => $method) {
@@ -52,8 +56,6 @@ class ParseWrapper
                 }
             }
         }
-
-        dump(234);
 
         $envKeys = collect($wrapperClass->config())
             ->mapWithKeys(fn($configItem, $envKey) => [$envKey => $configItem['description']])
@@ -66,7 +68,7 @@ class ParseWrapper
             ],
         ]);
 
-        shell_exec('composer remove ' . $api->package);
+        shell_exec('composer remove ' . $api->wrapper_package);
     }
 
     private function loadWrapperClass($wrapperClass)
@@ -87,5 +89,14 @@ class ParseWrapper
         }
 
         return new $wrapperClass;
+    }
+
+    private function getGitHubLink(Api $api)
+    {
+        $packagistInfo = Http::get('https://repo.packagist.org/p2/' . $api->api_package. '.json');
+
+        if($packagistInfo->status() == 200) {
+            return Arr::get(Arr::first($packagistInfo->json('packages')), '0.source.url');
+        }
     }
 }

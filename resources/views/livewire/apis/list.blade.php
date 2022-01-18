@@ -49,7 +49,7 @@
                                         </p>
                                         <p class="text-sm text-gray-500 truncate">
                                             <code>
-                                                {{ $anApi->package }}
+                                                {{ $anApi->api_package }}
                                             </code>
                                         </p>
                                     </a>
