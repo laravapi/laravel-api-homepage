@@ -4,15 +4,15 @@
         <div>
             <div class="bg-pink-500 h-16 text-white text-center pt-4 text-2xl font-bold">
                 <span>
-                    {{ $api->name }}
+                    {{ $currentApi->name }}
                 </span>
             </div>
 
             <div class="fixed right-4 top-4 whitespace-nowrap">
-                <a href="https://packagist.org/packages/{{ $api->api_package }}" target="_blank" class="inline-block rounded-full bg-white h-8 w-8 p-1">
+                <a href="https://packagist.org/packages/{{ $currentApi->api_package }}" target="_blank" class="inline-block rounded-full bg-white h-8 w-8 p-1">
                     <img src="{{ asset('images/packagist.png') }}" class="w-6 h-6"/>
                 </a>
-                <a href="{{ $api->github }}" target="_blank" class="inline-block">
+                <a href="{{ $currentApi->github }}" target="_blank" class="inline-block">
                     <img src="{{ asset('images/github.png') }}" class="w-8 h-8"/>
                 </a>
             </div>
@@ -20,7 +20,7 @@
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="-mt-12 sm:flex sm:items-end sm:space-x-5">
                     <div class="flex">
-                        <img class="h-20 w-20 rounded-full ring-4 ring-white" src="{{ $api->icon }}" alt="">
+                        <img class="h-20 w-20 rounded-full ring-4 ring-white" src="{{ $currentApi->icon }}" alt="">
                     </div>
                     {{--
                     <div class="mt-6 sm:flex-1 sm:min-w-0 sm:flex sm:items-center sm:justify-end sm:space-x-6 sm:pb-1">
@@ -71,15 +71,15 @@
 
 
             <div x-show="tab === 'description'" class="text-gray-700 p-4 ml-4">
-                {{ $api->description }}
+                {{ $currentApi->description }}
             </div>
             <div x-show="tab === 'installation'" class="text-gray-700 p-4 ml-4">
-                <code>php artisan api:install {{ $api->key }}</code>
+                <code>php artisan api:install {{ $currentApi->key }}</code>
 
-                @if(count($api->documentation['env']) > 0)
+                @if(count($currentApi->documentation['env']) > 0)
                     <div class="mt-2">
                         <div class="font-bold">Needed .env keys:</div>
-                        @foreach($api->documentation['env'] as $key => $description)
+                        @foreach($currentApi->documentation['env'] as $key => $description)
                             <div>
                                 <code>{{ $key }}</code> - {{ $description }}
                             </div>
@@ -88,11 +88,11 @@
                 @endif
             </div>
             <div x-show="tab === 'methods'" class="text-gray-700 p-4 ml-4">
-                @foreach($api->documentation['methods'] as $aMethod)
+                @foreach($currentApi->documentation['methods'] as $aMethod)
                     <div class="mb-2 hover:bg-gray-50 cursor-pointer flex justify-between" wire:click="setMethod('{{ $aMethod['name'] }}')">
                         <div>
                             <code>
-                                api('{{ $api->key }}')-><span class="font-bold">{{ $aMethod['name'] }}({{ collect($aMethod['parameters'])->map(fn($parameter) => $parameter['typeHint'] . ' $' . $parameter['name'])->implode(', ') }})</span>
+                                api('{{ $currentApi->key }}')-><span class="font-bold">{{ $aMethod['name'] }}({{ collect($aMethod['parameters'])->map(fn($parameter) => $parameter['typeHint'] . ' $' . $parameter['name'])->implode(', ') }})</span>
                             </code>
 
                             <div>

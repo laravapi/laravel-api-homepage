@@ -9,8 +9,18 @@ use Livewire\Component;
 class Apis extends Component
 {
     public $search;
-    public Api $api;
+    public Api $currentApi;
     public $method;
+    public $api;
+
+    protected $queryString = [
+        'api' => ['except' => ''],
+    ];
+
+    public function mount()
+    {
+        $this->currentApi = Api::firstWhere('key', $this->api);
+    }
 
     public function render()
     {
@@ -23,7 +33,8 @@ class Apis extends Component
 
     public function setApi(Api $api)
     {
-        $this->api = $api;
+        $this->currentApi = $api;
+        $this->api = $api->key;
     }
 
     public function setMethod($method)

@@ -36,7 +36,7 @@
                 <ul role="list" class="relative z-0 divide-y divide-gray-200">
                     @foreach($apiGroup as $anApi)
                         <li wire:click="setApi({{ $anApi->id }})">
-                            <div @class(['ring-pink-500 ring-2 ring-inset' => $anApi->is($api), 'relative px-6 py-5 flex items-center space-x-3 hover:bg-gray-50'])>
+                            <div @class(['ring-pink-500 ring-2 ring-inset' => $anApi->is($currentApi), 'relative px-6 py-5 flex items-center space-x-3 hover:bg-gray-50'])>
                                 <div class="flex-shrink-0">
                                     <img class="h-10 w-10 rounded-full bg-gray-50" src="{{ $anApi->icon }}" alt="">
                                 </div>
