@@ -17,6 +17,7 @@ class ApiResource extends JsonResource
         return [
             'key' => $this->key,
             'name' => $this->name,
+            'wrapperClass' => $this->wrapper_class,
             'wrapperPackage' => $this->wrapper_package,
             'apiPackage' => $this->api_package,
             'description' => $this->description,
