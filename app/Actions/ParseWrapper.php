@@ -11,7 +11,7 @@ use ReflectionParameter;
 
 class ParseWrapper
 {
-    protected $internalMethods = ['__call', 'boot', 'config'];
+    protected $internalMethods = ['__call', 'boot', 'config', 'check'];
 
     public function execute(Api $api)
     {
@@ -19,9 +19,11 @@ class ParseWrapper
 
         shell_exec('composer require ' . $api->wrapper_package);
 
-        $factory  = DocBlockFactory::createInstance();
+        $factory = DocBlockFactory::createInstance();
 
         $wrapperClass = $this->loadWrapperClass($api->wrapper_class);
+
+        // ToDo: check if wrapper has necessary methods like check()
 
         $reflector = new \ReflectionClass($wrapperClass);
 
