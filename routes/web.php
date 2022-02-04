@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Livewire\Apis;
-use App\Http\Livewire\Service;
+use App\Http\Livewire\Submit;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,5 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('submit', Submit::class)->name('submit-api');
 Route::get('apis', Apis::class)->name('apis');
+Route::get('documentation/get-started', Apis::class)->name('documentation.get-started');
+Route::get('documentation/embed-an-api', Apis::class)->name('documentation.embed-an-api');
 Route::view('/', 'welcome')->name('home');

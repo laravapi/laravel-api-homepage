@@ -19,7 +19,9 @@ class Apis extends Component
 
     public function mount()
     {
-        $this->currentApi = Api::firstWhere('key', $this->api);
+        if($this->api) {
+            $this->currentApi = Api::firstWhere('key', $this->api);
+        }
     }
 
     public function render()

@@ -98,48 +98,19 @@ require('@tailwindcss/forms'),
                 </div>
                 <nav aria-label="Sidebar" class="mt-5">
                     <div class="px-2 space-y-1">
-                        <!-- Current: "bg-gray-100 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
-                        <a href="{{ route('home') }}" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md">
-                            <!--
-                              Heroicon name: outline/home
-
-                              Current: "text-gray-500", Default: "text-gray-400 group-hover:text-gray-500"
-                            -->
-                            <svg class="text-gray-400 group-hover:text-gray-500 mr-4 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                            </svg>
-                            Home
-                        </a>
-
-                        <a href="#" class="bg-gray-100 text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md" aria-current="page">
-                            <!-- Heroicon name: outline/search-circle -->
-                            <svg class="text-gray-500 mr-4 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16l2.879-2.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242zM21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            Directory
-                        </a>
-
+                        <x-nav-item label="Home" icon="home" route="home"/>
+                        <x-nav-item label="Directory" icon="search-circle" route="apis" />
+                        <x-nav-item label="Submit" icon="cloud-upload" route="submit-api"/>
                     </div>
                     <hr class="border-t border-gray-200 my-5" aria-hidden="true">
-                    <div class="px-2 space-y-1">
-                        <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md">
-                            <!-- Heroicon name: outline/view-grid-add -->
-                            <svg class="text-gray-400 group-hover:text-gray-500 mr-4 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z" />
-                            </svg>
-                            Embed an API
-                        </a>
-
+                    <div class="flex-1 px-2">
+                            <span class="text-gray-500 italic flex items-center px-2 pb-1 text-xs font-medium rounded-md">
+                                Documentation
+                            </span>
                     </div>
-                    <div class="px-2 space-y-1">
-                        <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md">
-                            <!-- Heroicon name: outline/view-grid-add -->
-                            <svg class="text-gray-400 group-hover:text-gray-500 mr-4 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z" />
-                            </svg>
-                            Get started
-                        </a>
-
+                    <div class="flex-1 px-2 space-y-1">
+                        <x-nav-item label="Get started" icon="light-bulb" route="documentation.get-started"/>
+                        <x-nav-item label="Embed an API" icon="code" route="documentation.embed-an-api"/>
                     </div>
                 </nav>
             </div>
@@ -161,28 +132,9 @@ require('@tailwindcss/forms'),
                     </div>
                     <nav class="mt-5 flex-1" aria-label="Sidebar">
                         <div class="px-2 space-y-1">
-                            <!-- Current: "bg-gray-200 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
-                            <a href="{{ route('home') }}" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
-                                <!--
-                                  Heroicon name: outline/home
-
-                                  Current: "text-gray-500", Default: "text-gray-400 group-hover:text-gray-500"
-                                -->
-                                <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                                </svg>
-                                Home
-                            </a>
-
-                            <a href="#" class="bg-gray-200 text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md" aria-current="page">
-                                <!-- Heroicon name: outline/search-circle -->
-                                <svg class="text-gray-500 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16l2.879-2.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242zM21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                                Directory
-                            </a>
-
-
+                            <x-nav-item label="Home" icon="home" route="home"/>
+                            <x-nav-item label="Directory" icon="search-circle" route="apis" />
+                            <x-nav-item label="Submit" icon="cloud-upload" route="submit-api"/>
                         </div>
                         <hr class="border-t border-gray-200 my-5" aria-hidden="true">
                         <div class="flex-1 px-2">
@@ -191,24 +143,9 @@ require('@tailwindcss/forms'),
                             </span>
                         </div>
                         <div class="flex-1 px-2 space-y-1">
-                            <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
-                                <!-- Heroicon name: outline/view-grid-add -->
-                                <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z" />
-                                </svg>
-                                Get started
-                            </a>
+                            <x-nav-item label="Get started" icon="light-bulb" route="documentation.get-started"/>
+                            <x-nav-item label="Embed an API" icon="code" route="documentation.embed-an-api"/>
                         </div>
-                        <div class="flex-1 px-2 space-y-1">
-                            <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
-                                <!-- Heroicon name: outline/view-grid-add -->
-                                <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z" />
-                                </svg>
-                                Embed an API
-                            </a>
-                        </div>
-
                     </nav>
                 </div>
             </div>
