@@ -71,7 +71,7 @@
 
 
             <div x-show="tab === 'description'" class="text-gray-700 p-4 ml-4">
-                {{ $currentApi->description }}
+                {!! $currentApi->description !!}
             </div>
             <div x-show="tab === 'installation'" class="text-gray-700 p-4 ml-4">
                 <code>php artisan api:install {{ $currentApi->key }}</code>
