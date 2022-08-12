@@ -40,6 +40,7 @@
         "laravel/jetstream": "^2.5",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
+        "league/flysystem-aws-s3-v3": "^3.2",
         "livewire/livewire": "^2.9",
         "phpdocumentor/reflection-docblock": "^5.3",
         "spatie/laravel-demo-mode": "^2.7",

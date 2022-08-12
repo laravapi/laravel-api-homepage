@@ -26,7 +26,7 @@ class ApiResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('key')
                     ->required()
-                    ->unique()
+                    ->unique(ignoreRecord: true)
                     ->maxLength(255),
                 Forms\Components\TextInput::make('name')
                     ->required()
@@ -35,6 +35,8 @@ class ApiResource extends Resource
                     ->options(ApiStatus::asArray())
                     ->required(),
                 Forms\Components\SpatieMediaLibraryFileUpload::make('icon')
+                    ->visibility('public')
+                    ->preserveFilenames()
                     ->disk(config('media-library.disk_name')),
                 Forms\Components\TextInput::make('wrapper_package')
                     ->required()
@@ -53,7 +55,6 @@ class ApiResource extends Resource
                 Forms\Components\Textarea::make('description')
                     ->required()
                     ->maxLength(65535),
-                Forms\Components\Textarea::make('documentation'),
             ]);
     }
 
