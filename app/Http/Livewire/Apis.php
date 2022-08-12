@@ -27,9 +27,11 @@ class Apis extends Component
 
     public function render()
     {
+        $apis = $this->getApis();
+
         return view('livewire.apis', [
-            'countApis' => DB::table('apis')->count(),
-            'apis' => $this->getApis(),
+            'countApis' => count($apis),
+            'apis' => $apis,
         ])
         ->layout('layouts.app');
     }
