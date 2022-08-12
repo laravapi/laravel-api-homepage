@@ -70,7 +70,7 @@
             </div>
 
 
-            <div x-show="tab === 'description'" class="text-gray-700 p-4 ml-4">
+            <div x-show="tab === 'description'" class="text-gray-700 p-4 ml-4 prose lg:prose-xl">
                 {!! $currentApi->description !!}
             </div>
             <div x-show="tab === 'installation'" class="text-gray-700 p-4 ml-4">
