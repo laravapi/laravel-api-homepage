@@ -39,6 +39,7 @@
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.9",
         "phpdocumentor/reflection-docblock": "^5.3",
+        "spatie/laravel-demo-mode": "^2.7",
         "spatie/laravel-ray": "^1.29"
     },
     "require-dev": {

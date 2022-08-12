@@ -15,8 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('submit', Submit::class)->name('submit-api');
-Route::get('apis', Apis::class)->name('apis');
-Route::get('documentation/get-started', Apis::class)->name('documentation.get-started');
-Route::get('documentation/embed-an-api', Apis::class)->name('documentation.embed-an-api');
-Route::view('/', 'welcome')->name('home');
+Route::group(['middleware' => ['demoMode']], function() {
+    Route::get('submit', Submit::class)->name('submit-api');
+    Route::get('apis', Apis::class)->name('apis');
+    Route::get('documentation/get-started', Apis::class)->name('documentation.get-started');
+    Route::get('documentation/embed-an-api', Apis::class)->name('documentation.embed-an-api');
+    Route::view('/', 'welcome')->name('home');
+});
+
+Route::demoAccess('/come-in-and-find-out');
+Route::get('/under-construction', fn() => 'No. Not yet.')->withoutMiddleware(\Spatie\DemoMode\DemoMode::class);

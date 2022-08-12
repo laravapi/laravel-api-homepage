@@ -76,7 +76,7 @@
             <div x-show="tab === 'installation'" class="text-gray-700 p-4 ml-4">
                 <code>php artisan api:install {{ $currentApi->key }}</code>
 
-                @if(count($currentApi->documentation['env']) > 0)
+                @if(count(Arr::get($currentApi->documentation, 'env', [])) > 0)
                     <div class="mt-2">
                         <div class="font-bold">Needed .env keys:</div>
                         @foreach($currentApi->documentation['env'] as $key => $description)
@@ -88,7 +88,7 @@
                 @endif
             </div>
             <div x-show="tab === 'methods'" class="text-gray-700 p-4 ml-4">
-                @foreach($currentApi->documentation['methods'] as $aMethod)
+                @foreach(Arr::get($currentApi->documentation, 'methods', []) as $aMethod)
                     <div class="mb-2 hover:bg-gray-50 cursor-pointer flex justify-between" wire:click="setMethod('{{ $aMethod['name'] }}')">
                         <div>
                             <code>
