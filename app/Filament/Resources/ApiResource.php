@@ -52,9 +52,8 @@ class ApiResource extends Resource
                 Forms\Components\TextInput::make('wrapper_class')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Textarea::make('description')
-                    ->required()
-                    ->maxLength(65535),
+                Forms\Components\RichEditor::make('description')
+                    ->required(),
             ]);
     }
 
