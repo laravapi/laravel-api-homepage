@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class Api extends Model implements HasMedia
 {
@@ -17,4 +18,12 @@ class Api extends Model implements HasMedia
         'status' => ApiStatus::class,
         'documentation' => 'array',
     ];
+
+    public function registerMediaConversions(Media $media = null): void
+    {
+        $this->addMediaConversion('small')
+            ->width(40)
+            ->height(40)
+            ->sharpen(10);
+    }
 }
