@@ -22,8 +22,8 @@ class Api extends Model implements HasMedia
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('small')
-            ->width(40)
-            ->height(40)
+            ->width(80)
+            ->height(80)
             ->sharpen(10);
     }
 }

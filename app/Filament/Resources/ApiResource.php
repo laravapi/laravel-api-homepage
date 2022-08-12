@@ -37,6 +37,7 @@ class ApiResource extends Resource
                 Forms\Components\SpatieMediaLibraryFileUpload::make('icon')
                     ->visibility('public')
                     ->preserveFilenames()
+                    ->collection('icon')
                     ->disk(config('media-library.disk_name')),
                 Forms\Components\TextInput::make('wrapper_package')
                     ->required()
