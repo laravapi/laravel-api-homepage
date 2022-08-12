@@ -30,24 +30,28 @@
         "php": "^8.1",
         "barryvdh/laravel-debugbar": "^3.6",
         "blade-ui-kit/blade-heroicons": "^1.3",
+        "doctrine/dbal": "^3.4",
+        "filament/filament": "^2.0",
+        "filament/spatie-laravel-media-library-plugin": "^2.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel-api/laravel-api": "dev-main",
-        "laravel/framework": "^8.75",
+        "laravel/framework": "^9.0",
         "laravel/jetstream": "^2.5",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.9",
         "phpdocumentor/reflection-docblock": "^5.3",
         "spatie/laravel-demo-mode": "^2.7",
+        "spatie/laravel-medialibrary": "^10.4",
         "spatie/laravel-ray": "^1.29"
     },
     "require-dev": {
-        "facade/ignition": "^2.5",
+        "spatie/laravel-ignition": "^1.0",
         "fakerphp/faker": "^1.9.1",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
-        "nunomaduro/collision": "^5.10",
+        "nunomaduro/collision": "^6.1",
         "phpunit/phpunit": "^9.5.10"
     },
     "autoload": {
@@ -68,7 +72,8 @@
             "@php artisan package:discover --ansi"
         ],
         "post-update-cmd": [
-            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
+            "@php artisan filament:upgrade"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""

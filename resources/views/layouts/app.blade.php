@@ -98,7 +98,6 @@ require('@tailwindcss/forms'),
                 </div>
                 <nav aria-label="Sidebar" class="mt-5">
                     <div class="px-2 space-y-1">
-                        <x-nav-item label="Home" icon="home" route="home"/>
                         <x-nav-item label="Directory" icon="search-circle" route="apis" />
                         <x-nav-item label="Submit" icon="cloud-upload" route="submit-api"/>
                     </div>
@@ -132,7 +131,6 @@ require('@tailwindcss/forms'),
                     </div>
                     <nav class="mt-5 flex-1" aria-label="Sidebar">
                         <div class="px-2 space-y-1">
-                            <x-nav-item label="Home" icon="home" route="home"/>
                             <x-nav-item label="Directory" icon="search-circle" route="apis" />
                             <x-nav-item label="Submit" icon="cloud-upload" route="submit-api"/>
                         </div>

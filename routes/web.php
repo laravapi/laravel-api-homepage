@@ -18,9 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => ['demoMode']], function() {
     Route::get('submit', Submit::class)->name('submit-api');
     Route::get('apis', Apis::class)->name('apis');
-    Route::get('documentation/get-started', Apis::class)->name('documentation.get-started');
-    Route::get('documentation/embed-an-api', Apis::class)->name('documentation.embed-an-api');
-    Route::view('/', 'welcome')->name('home');
+    Route::view('documentation/get-started', 'documentation.get-started')->name('documentation.get-started');
+    Route::view('documentation/embed-an-api', 'documentation.embed-an-api')->name('documentation.embed-an-api');
+    Route::redirect('/', 'apis')->name('home');
 });
 
 Route::demoAccess('/come-in-and-find-out');

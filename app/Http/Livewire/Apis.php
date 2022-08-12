@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Enums\ApiStatus;
 use App\Models\Api;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
@@ -48,6 +49,7 @@ class Apis extends Component
     {
         return Api::query()
             ->when($this->search, fn($query) => $query->where('name', 'LIKE', '%' . $this->search . '%'))
+            ->where('status', ApiStatus::PUBLISHED)
             ->orderBy('name')
             ->get()
             ->groupBy(fn(Api $api) => substr($api->name, 0, 1));
