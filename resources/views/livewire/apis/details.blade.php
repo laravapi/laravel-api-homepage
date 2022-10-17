@@ -88,6 +88,11 @@
                 @endif
             </div>
             <div x-show="tab === 'methods'" class="text-gray-700 p-4 ml-4">
+                @if($description = Arr::get($currentApi->documentation, 'methodsDescription'))
+                    <div class="mb-4">
+                        {!! $description !!}
+                    </div>
+                @endif
                 @foreach(Arr::get($currentApi->documentation, 'methods', []) as $aMethod)
                     <div class="mb-2 hover:bg-gray-50 cursor-pointer flex justify-between" wire:click="setMethod('{{ $aMethod['name'] }}')">
                         <div>
